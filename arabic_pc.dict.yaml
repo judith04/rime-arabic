@@ -1,0 +1,146 @@
+# Rime dictionary
+#
+# 阿拉伯文转写_PC
+# 
+
+
+---
+name: arabic_pc
+version: '0.1'
+sort: original
+...
+
+# Precomposition
+آ	hB
+أ	hG
+ؤ	,G
+إ	hT
+ئ	dG
+
+# Assimilation: al-C -> aC-C
+لذّ	g`~
+لضّ	gq~
+لصّ	gw~
+لثّ	ge~
+لدّ	g]~
+لشّ	ga~
+لسّ	gs~
+للّ	gg~
+لتّ	gj~
+لنّ	gk~
+لطّ	g'~
+لرّ	gv~
+لزّ	g.~
+لظّ	g/~
+
+# Gemination
+ذّ	`~
+ضّ	q~
+صّ	w~
+ثّ	e~
+قّ	r~
+فّ	t~
+غّ	y~
+عّ	u~
+هّ	i~
+خّ	o~
+حّ	p~
+جّ	[~
+دّ	]~
+شّ	a~
+سّ	s~
+يّ	d~
+بّ	f~
+لّ	g~
+تّ	j~
+نّ	k~
+مّ	l~
+كّ	;~
+طّ	'~
+ئّ	z~
+ءّ	x~
+ؤّ	c~
+رّ	v~
+وّ	,~
+زّ	.~
+ظّ	/~
+إّ	Y~
+أّ	H~
+
+# Long vowels
+َا	Qh
+َى	Qn
+ِي	Ad
+ُو	E,
+
+# Basic
+ذ	`
+ض	q
+ص	w
+ث	e
+ق	r
+ف	t
+غ	y
+ع	u
+ه	i
+خ	o
+ح	p
+ج	[
+د	]
+ش	a
+س	s
+ي	d
+ب	f
+ل	g
+ا	h
+ت	j
+ن	k
+م	l
+ك	;
+ط	'
+ئ	z
+ء	x
+ؤ	c
+ر	v
+ٰ	b
+ى	n
+ة	m
+و	,
+ز	.
+ظ	/
+
+# Shift
+ّ	~
+)	(
+(	)
+َ	Q
+ً	W
+ُ	E
+ٌ	R
+ٕ	T
+إ	Y
+‘	U
+÷	I
+×	O
+؛	P
+<	{
+>	}
+ِ	A
+ٍ	S
+]	D
+[	F
+ٔ	G
+أ	H
+ـ	J
+،	K
+/	L
+~	Z
+ْ	X
+}	C
+{	V
+ٓ	B
+آ	N
+’	M
+,	<
+.	>
+؟	?

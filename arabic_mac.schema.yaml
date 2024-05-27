@@ -1,0 +1,270 @@
+# Rime schema
+# encoding: utf-8
+
+schema:
+  schema_id: arabic_mac
+  name: 阿拉伯文转写_Mac
+  version: '0.1.0'
+  author: 
+    - Mishiro Shinohara <mishiro@sisu1949.onmicrosoft.com>
+  description: |
+    基于 Mac 的阿拉伯文键位，有增补
+    原 AltGr 可使用 ~ 前导输入
+
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: [ ع, EN ]
+
+engine:
+  processors:
+    - ascii_composer
+    - key_binder
+    - speller
+    - selector
+    - punctuator
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - script_translator
+
+speller:
+  alphabet: "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
+  initials: "abcdefghijklmnopqrstuvwxyz;[]BCDEHIMNQRTUVWY_`~"
+  auto_select: false
+
+translator:
+  dictionary: arabic_mac
+  enable_sentence: false
+  enable_user_dict: false
+  preedit_format:
+    # "_" needs to be processed first
+    - xform|~_|~-|
+    - xform|_|`|
+
+    # Mapping begins
+
+    # AltGr
+    - xform|~[1!]|ظ|
+    - xform|~2|ط|
+    - xform|~3|ذ|
+    - xform|~4|د|
+    - xform|~5|∞|
+    - xform|~6|ٱ|
+    - xform|~0|°|
+    - xform|~-|_|
+    - xform|~q|‘|
+    - xform|~w|’|
+    - xform|~e|“|
+    - xform|~r|”|
+    - xform|~[tT]|ڤ|
+    - xform|~[uU]|ە|
+    - xform|~[iI]|ھ| # Appended
+    - xform|~[\[\{]|چ|
+    - xform|~[sS]|ے|
+    - xform|~[dD]|ی|
+    - xform|~[fF]|پ|
+    - xform|~g|ٓ|
+    - xform|~h|ٰ|
+    - xform|~[jJ]|ٹ|
+    - xform|~[kK]|ں|
+    - xform|~;|گ|
+    - xform|~['"]|…|
+    - xform|~[cC]|ڈ|
+    - xform|~[vV]|ڑ|
+    - xform|~[bB]|ژ|
+    - xform|~[,<]|,|
+    - xform|~[/\?]|÷|
+    - xform|~@|❊|
+    - xform|~#|£|
+    - xform|~\$|€|
+    - xform|~R|‰|
+    - xform|~G|ٔ| # Appended
+    - xform|~H|ٕ| # Appended
+    - xform|~:|ک|
+
+    # Basic
+    - xlit|`qwertyuiop[]asdfghjkl;zxcvbnmQWERTYUIDHCVBNM|ـضصثقفغعهخحجةشسيبلاتنمكظطذدزروًٌٍَُِّْىآئءأإؤ|
+    - xlit|()OP{}ASKLZ<>|)(][}{»«.,'><|
+
+    # Mapping ends
+
+    # Transliteration begins
+
+    # Assimilation: al-C -> aC-C
+    - xform|لتّ|tt|
+    - xform|لثّ|ṯṯ|
+    - xform|لدّ|dd|
+    - xform|لذّ|ḏḏ|
+    - xform|لرّ|rr|
+    - xform|لزّ|zz|
+    - xform|لسّ|ss|
+    - xform|لشّ|šš|
+    - xform|لصّ|ṣṣ|
+    - xform|لضّ|ḍḍ|
+    - xform|لطّ|ṭṭ|
+    - xform|لظّ|ẓẓ|
+    - xform|للّ|ll|
+    - xform|لنّ|nn|
+
+    # Gemination
+    - xform|ءّ|ʾʾ|
+    - xform|أّ|ʾʾ|
+    - xform|ؤّ|ʾʾ|
+    - xform|إّ|ʾʾ|
+    - xform|ئّ|ʾʾ|
+    - xform|بّ|bb|
+    - xform|تّ|tt|
+    - xform|ثّ|ṯṯ|
+    - xform|جّ|ǧǧ|
+    - xform|حّ|ḥḥ|
+    - xform|خّ|ḫḫ|
+    - xform|دّ|dd|
+    - xform|ذّ|ḏḏ|
+    - xform|رّ|rr|
+    - xform|زّ|zz|
+    - xform|سّ|ss|
+    - xform|شّ|šš|
+    - xform|صّ|ṣṣ|
+    - xform|ضّ|ḍḍ|
+    - xform|طّ|ṭṭ|
+    - xform|ظّ|ẓẓ|
+    - xform|عّ|ʿʿ|
+    - xform|غّ|ġġ|
+    - xform|فّ|ff|
+    - xform|قّ|qq|
+    - xform|كّ|kk|
+    - xform|لّ|ll|
+    - xform|مّ|mm|
+    - xform|نّ|nn|
+    - xform|هّ|hh|
+    - xform|وّ|ww|
+    - xform|يّ|yy|
+
+    # Long vowels
+    - xform|َا|ā|
+    - xform|َى|ā|
+    - xform|ُو|ū|
+    - xform|ِي|ī|
+
+    # Singletons
+    - xform|ء|ʾ|
+    - xform|آ|ʾā|
+    - xform|أ|ʾ|
+    - xform|ؤ|ʾ|
+    - xform|إ|ʾ|
+    - xform|ئ|ʾ|
+    - xform|ا||
+    - xform|ب|b|
+    - xform|ة|t|
+    - xform|ت|t|
+    - xform|ث|ṯ|
+    - xform|ج|ǧ|
+    - xform|ح|ḥ|
+    - xform|خ|ḫ|
+    - xform|د|d|
+    - xform|ذ|ḏ|
+    - xform|ر|r|
+    - xform|ز|z|
+    - xform|س|s|
+    - xform|ش|š|
+    - xform|ص|ṣ|
+    - xform|ض|ḍ|
+    - xform|ط|ṭ|
+    - xform|ظ|ẓ|
+    - xform|ع|ʿ|
+    - xform|غ|ġ|
+    - xform|ـ||
+    - xform|ف|f|
+    - xform|ق|q|
+    - xform|ك|k|
+    - xform|ل|l|
+    - xform|م|m|
+    - xform|ن|n|
+    - xform|ه|h|
+    - xform|و|w|
+    - xform|ى||
+    - xform|ي|y|
+    - xform|ً|an|
+    - xform|ٌ|un|
+    - xform|ٍ|in|
+    - xform|َ|a|
+    - xform|ُ|u|
+    - xform|ِ|i|
+    - xform|ّ||
+    - xform|ْ||
+    - xform|ٓ||
+    - xform|ٔ|| # Appended
+    - xform|ٕ|| # Appended
+    - xform|ٰ|ā|
+    - xform|ٱ||
+    - xform|ٹ|ṭ|
+    - xform|پ|p|
+    - xform|چ|č|
+    - xform|ڈ|ḍ|
+    - xform|ڑ|ṛ|
+    - xform|ژ|ž|
+    - xform|ڤ|v|
+    - xform|ک|k|
+    - xform|گ|g|
+    - xform|ں|ṉ|
+    - xform|ھ|h| # Appended
+    - xform|ی|y|
+    - xform|ے|e|
+    - xform|ە|e|
+
+    # Transliteration ends
+
+    # Trim white spaces
+    - xform| ||
+  comment_format:
+    - xform|^~||
+
+punctuator:
+  use_space: true
+  half_shape:
+    ' ' : { commit: ' ' }
+    "1" : "١"
+    "2" : "٢"
+    "3" : "٣"
+    "4" : "٤"
+    "5" : "٥"
+    "6" : "٦"
+    "7" : "٧"
+    "8" : "٨"
+    "9" : "٩"
+    "0" : "٠"
+    "," : "،"
+    "'" : "؛"
+    "%" : "٪"
+    "(" : ")"
+    ")" : "("
+    "O" : "]"
+    "P" : "["
+    "{" : "}"
+    "}" : "{"
+    "A" : "»"
+    "S" : "«"
+    "K" : "٫"
+    "L" : "٬"
+    "Z" : "'"
+    "<" : ">"
+    ">" : "<"
+    "?" : "؟"
+
+style:
+  font_face: "Gentium Plus, Scheherazade New"
+
+key_binder:
+  # import_preset: default
+  bindings:
+    - {accept: "Return", send: "Shift+Return", when: has_menu}
+
+menu:
+  page_size: 1

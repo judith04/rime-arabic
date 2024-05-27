@@ -1,0 +1,220 @@
+# Rime schema
+# encoding: utf-8
+
+schema:
+  schema_id: arabic_pc
+  name: 阿拉伯文转写_PC
+  version: '0.1.0'
+  author: 
+    - Mishiro Shinohara <mishiro@sisu1949.onmicrosoft.com>
+  description: |
+    基于 IBM PC 的阿拉伯文键位，有改动
+
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: [ ع, ENG ]
+
+engine:
+  processors:
+    - ascii_composer
+    - key_binder
+    - speller
+    - selector
+    - punctuator
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - script_translator
+
+speller:
+  alphabet: "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
+  initials: "',./abcdefghijklmnopqrstuvwxyz;[]ABEGHJNQRSTWXY`~"
+  auto_select: false
+
+translator:
+  dictionary: arabic_pc
+  enable_sentence: false
+  enable_user_dict: false
+  preedit_format:
+    # Mapping
+    - xlit|`qwertyuiop[]asdfghjkl;'zxcvnm,./~QWERYASHJXN|ذضصثقفغعهخحجدشسيبلاتنمكطئءؤرىةوزظًٌَُّإٍِأـْآ|
+    - xlit|bTGB|ٰٕٔٓ| # Modified
+    - xlit|UIOP{}DFKLZCVM<>|‘÷×;<>][,/~}{’,.|
+
+    # Precomposition
+    - xform|آ|آ|
+    - xform|أ|أ|
+    - xform|ؤ|ؤ|
+    - xform|إ|إ|
+    - xform|ئ|ئ|
+
+    # Transliteration begins
+
+    # Assimilation: al-C -> aC-C
+    - xform|لتّ|tt|
+    - xform|لثّ|ṯṯ|
+    - xform|لدّ|dd|
+    - xform|لذّ|ḏḏ|
+    - xform|لرّ|rr|
+    - xform|لزّ|zz|
+    - xform|لسّ|ss|
+    - xform|لشّ|šš|
+    - xform|لصّ|ṣṣ|
+    - xform|لضّ|ḍḍ|
+    - xform|لطّ|ṭṭ|
+    - xform|لظّ|ẓẓ|
+    - xform|للّ|ll|
+    - xform|لنّ|nn|
+
+    # Gemination
+    - xform|ءّ|ʾʾ|
+    - xform|أّ|ʾʾ|
+    - xform|ؤّ|ʾʾ|
+    - xform|إّ|ʾʾ|
+    - xform|ئّ|ʾʾ|
+    - xform|بّ|bb|
+    - xform|تّ|tt|
+    - xform|ثّ|ṯṯ|
+    - xform|جّ|ǧǧ|
+    - xform|حّ|ḥḥ|
+    - xform|خّ|ḫḫ|
+    - xform|دّ|dd|
+    - xform|ذّ|ḏḏ|
+    - xform|رّ|rr|
+    - xform|زّ|zz|
+    - xform|سّ|ss|
+    - xform|شّ|šš|
+    - xform|صّ|ṣṣ|
+    - xform|ضّ|ḍḍ|
+    - xform|طّ|ṭṭ|
+    - xform|ظّ|ẓẓ|
+    - xform|عّ|ʿʿ|
+    - xform|غّ|ġġ|
+    - xform|فّ|ff|
+    - xform|قّ|qq|
+    - xform|كّ|kk|
+    - xform|لّ|ll|
+    - xform|مّ|mm|
+    - xform|نّ|nn|
+    - xform|هّ|hh|
+    - xform|وّ|ww|
+    - xform|يّ|yy|
+
+    # Long vowels
+    - xform|َا|ā|
+    - xform|َى|ā|
+    - xform|ُو|ū|
+    - xform|ِي|ī|
+
+    # Singletons
+    - xform|ء|ʾ|
+    - xform|آ|ʾā|
+    - xform|أ|ʾ|
+    - xform|ؤ|ʾ|
+    - xform|إ|ʾ|
+    - xform|ئ|ʾ|
+    - xform|ا||
+    - xform|ب|b|
+    - xform|ة|t|
+    - xform|ت|t|
+    - xform|ث|ṯ|
+    - xform|ج|ǧ|
+    - xform|ح|ḥ|
+    - xform|خ|ḫ|
+    - xform|د|d|
+    - xform|ذ|ḏ|
+    - xform|ر|r|
+    - xform|ز|z|
+    - xform|س|s|
+    - xform|ش|š|
+    - xform|ص|ṣ|
+    - xform|ض|ḍ|
+    - xform|ط|ṭ|
+    - xform|ظ|ẓ|
+    - xform|ع|ʿ|
+    - xform|غ|ġ|
+    - xform|ـ||
+    - xform|ف|f|
+    - xform|ق|q|
+    - xform|ك|k|
+    - xform|ل|l|
+    - xform|م|m|
+    - xform|ن|n|
+    - xform|ه|h|
+    - xform|و|w|
+    - xform|ى||
+    - xform|ي|y|
+    - xform|ً|an|
+    - xform|ٌ|un|
+    - xform|ٍ|in|
+    - xform|َ|a|
+    - xform|ُ|u|
+    - xform|ِ|i|
+    - xform|ّ||
+    - xform|ْ||
+    - xform|ٓ|| # Appended
+    - xform|ٔ|| # Appended
+    - xform|ٕ|| # Appended
+    - xform|ٰ|ā| # Appended
+
+    # Transliteration ends
+
+    # Trim white spaces
+    - xform| ||
+  comment_format:
+    - xform|^~||
+
+punctuator:
+  use_space: true
+  half_shape:
+    ' ' : { commit: ' ' }
+
+    # Modified
+    "1" : "١"
+    "2" : "٢"
+    "3" : "٣"
+    "4" : "٤"
+    "5" : "٥"
+    "6" : "٦"
+    "7" : "٧"
+    "8" : "٨"
+    "9" : "٩"
+    "0" : "٠"
+    
+    "(" : ")"
+    ")" : "("
+    "U" : "‘"
+    "I" : "÷"
+    "O" : "×"
+    "P" : "؛"
+    "[" : "<"
+    "]" : ">"
+    "D" : "]"
+    "F" : "["
+    "K" : "،"
+    "L" : "/"
+    "Z" : "~"
+    "C" : "}"
+    "V" : "{"
+    "M" : "’"
+    "<" : ","
+    ">" : "."
+    "?" : "؟"
+
+style:
+  font_face: "Gentium Plus, Scheherazade New"
+
+key_binder:
+  # import_preset: default
+  bindings:
+    - {accept: "Return", send: "Shift+Return", when: has_menu}
+
+menu:
+  page_size: 1
