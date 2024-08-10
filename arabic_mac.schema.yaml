@@ -4,11 +4,11 @@
 schema:
   schema_id: arabic_mac
   name: 阿拉伯文转写_Mac
-  version: '0.1.0'
+  version: '0.2.0'
   author: 
     - Mishiro Shinohara <mishiro@sisu1949.onmicrosoft.com>
   description: |
-    基于 Mac 的阿拉伯文键位，有增补
+    基于 Mac 的阿拉伯文键位，有改动
     原 AltGr 可使用 ~ 前导输入
 
 switches:
@@ -35,7 +35,7 @@ engine:
     - script_translator
 
 speller:
-  alphabet: "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
+  alphabet: "!\"#$%&'()*+,-./023456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
   initials: "abcdefghijklmnopqrstuvwxyz;[]BCDEHIMNQRTUVWY_`~"
   auto_select: false
 
@@ -51,7 +51,7 @@ translator:
     # Mapping begins
 
     # AltGr
-    - xform|~[1!]|ظ|
+    # - xform|~1|ظ| # Removed, use ~! instead
     - xform|~2|ط|
     - xform|~3|ذ|
     - xform|~4|د|
@@ -81,6 +81,7 @@ translator:
     - xform|~[bB]|ژ|
     - xform|~[,<]|,|
     - xform|~[/\?]|÷|
+    - xform|~!|ظ|
     - xform|~@|❊|
     - xform|~#|£|
     - xform|~\$|€|
@@ -91,6 +92,7 @@ translator:
 
     # Basic
     - xlit|`qwertyuiop[]asdfghjkl;zxcvbnmQWERTYUIDHCVBNM|ـضصثقفغعهخحجةشسيبلاتنمكظطذدزروًٌٍَُِّْىآئءأإؤ|
+    - xlit|234567890|ًٌٍَُِّْٰ| # Appended
     - xlit|()OP{}ASKLZ<>|)(][}{»«.,'><|
 
     # Mapping ends
@@ -146,6 +148,10 @@ translator:
     - xform|هّ|hh|
     - xform|وّ|ww|
     - xform|يّ|yy|
+
+    # Long vowels patch
+    - xform|ُو([ًٌٍَُِٰ])|uw$1|
+    - xform|ِي([ًٌٍَُِٰ])|iy$1|
 
     # Long vowels
     - xform|َا|ā|

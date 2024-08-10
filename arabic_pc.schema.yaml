@@ -4,7 +4,7 @@
 schema:
   schema_id: arabic_pc
   name: 阿拉伯文转写_PC
-  version: '0.1.0'
+  version: '0.2.0'
   author: 
     - Mishiro Shinohara <mishiro@sisu1949.onmicrosoft.com>
   description: |
@@ -34,7 +34,7 @@ engine:
     - script_translator
 
 speller:
-  alphabet: "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
+  alphabet: "!\"#$%&'()*+,-./123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
   initials: "',./abcdefghijklmnopqrstuvwxyz;[]ABEGHJNQRSTWXY`~"
   auto_select: false
 
@@ -43,9 +43,38 @@ translator:
   enable_sentence: false
   enable_user_dict: false
   preedit_format:
-    # Mapping
+    # Mapping begins
+
+    # Variation
+    - xform|t\\|ڤ|
+    - xform|y\\|ٱ|
+    - xform|u\\|ە|
+    - xform|i\\|ھ|
+    - xform|\[\\|چ|
+    - xform|\]\\|ڈ|
+    - xform|s\\|ے|
+    - xform|d\\|ی|
+    - xform|f\\|پ|
+    - xform|h\\|ٰ|
+    - xform|j\\|ٹ|
+    - xform|k\\|ں|
+    - xform|;\\|گ|
+    - xform|'\\|ک|
+    - xform|v\\|ڑ|
+    - xform|\.\\|ژ|
+    - xform|Y\\|ٕ|
+    - xform|H\\|ٔ|
+    - xform|N\\|ٓ|
+
+    # Ligature
+    - xform|b|لا|
+    - xform|T|لإ|
+    - xform|G|لأ|
+    - xform|B|لآ|
+
+    # Basic
     - xlit|`qwertyuiop[]asdfghjkl;'zxcvnm,./~QWERYASHJXN|ذضصثقفغعهخحجدشسيبلاتنمكطئءؤرىةوزظًٌَُّإٍِأـْآ|
-    - xlit|bTGB|ٰٕٔٓ| # Modified
+    - xlit|123456789|ًٌٍَُِّْٰ| # Appended
     - xlit|UIOP{}DFKLZCVM<>|‘÷×;<>][,/~}{’,.|
 
     # Precomposition
@@ -54,6 +83,8 @@ translator:
     - xform|ؤ|ؤ|
     - xform|إ|إ|
     - xform|ئ|ئ|
+
+    # Mapping ends
 
     # Transliteration begins
 
@@ -107,6 +138,10 @@ translator:
     - xform|وّ|ww|
     - xform|يّ|yy|
 
+    # Long vowels patch
+    - xform|ُو([ًٌٍَُِٰ])|uw$1|
+    - xform|ِي([ًٌٍَُِٰ])|iy$1|
+
     # Long vowels
     - xform|َا|ā|
     - xform|َى|ā|
@@ -159,10 +194,26 @@ translator:
     - xform|ِ|i|
     - xform|ّ||
     - xform|ْ||
-    - xform|ٓ|| # Appended
-    - xform|ٔ|| # Appended
-    - xform|ٕ|| # Appended
-    - xform|ٰ|ā| # Appended
+    # Appended
+    - xform|ٓ||
+    - xform|ٔ||
+    - xform|ٕ||
+    - xform|ٰ|ā|
+    - xform|ٱ||
+    - xform|ٹ|ṭ|
+    - xform|پ|p|
+    - xform|چ|č|
+    - xform|ڈ|ḍ|
+    - xform|ڑ|ṛ|
+    - xform|ژ|ž|
+    - xform|ڤ|v|
+    - xform|ک|k|
+    - xform|گ|g|
+    - xform|ں|ṉ|
+    - xform|ھ|h|
+    - xform|ی|y|
+    - xform|ے|e|
+    - xform|ە|e|
 
     # Transliteration ends
 
@@ -217,4 +268,5 @@ key_binder:
     - {accept: "Return", send: "Shift+Return", when: has_menu}
 
 menu:
+  alternative_select_keys: "0"
   page_size: 1

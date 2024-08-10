@@ -6,16 +6,16 @@
 
 ---
 name: arabic_pc
-version: '0.1'
+version: '0.2'
 sort: original
 ...
 
 # Precomposition
-آ	hB
-أ	hG
-ؤ	,G
-إ	hT
-ئ	dG
+آ	hN\
+أ	hH\
+ؤ	,H\
+إ	hY\
+ئ	dH\
 
 # Assimilation: al-C -> aC-C
 لذّ	g`~
@@ -32,6 +32,21 @@ sort: original
 لرّ	gv~
 لزّ	g.~
 لظّ	g/~
+
+لذّ	g`1
+لضّ	gq1
+لصّ	gw1
+لثّ	ge1
+لدّ	g]1
+لشّ	ga1
+لسّ	gs1
+للّ	gg1
+لتّ	gj1
+لنّ	gk1
+لطّ	g'1
+لرّ	gv1
+لزّ	g.1
+لظّ	g/1
 
 # Gemination
 ذّ	`~
@@ -67,14 +82,143 @@ sort: original
 إّ	Y~
 أّ	H~
 
+ذّ	`1
+ضّ	q1
+صّ	w1
+ثّ	e1
+قّ	r1
+فّ	t1
+غّ	y1
+عّ	u1
+هّ	i1
+خّ	o1
+حّ	p1
+جّ	[1
+دّ	]1
+شّ	a1
+سّ	s1
+يّ	d1
+بّ	f1
+لّ	g1
+تّ	j1
+نّ	k1
+مّ	l1
+كّ	;1
+طّ	'1
+ئّ	z1
+ءّ	x1
+ؤّ	c1
+رّ	v1
+وّ	,1
+زّ	.1
+ظّ	/1
+إّ	Y1
+أّ	H1
+
+# Long vowels patch
+ُوَ	E,Q
+ُوً	E,W
+ُوُ	E,E
+ُوٌ	E,R
+ُوِ	E,A
+ُوٍ	E,S
+ُوٰ	E,h\
+ِيَ	AdQ
+ِيً	AdW
+ِيُ	AdE
+ِيٌ	AdR
+ِيِ	AdA
+ِيٍ	AdS
+ِيٰ	Adh\
+
+ُوَ	4,Q
+ُوً	4,W
+ُوُ	4,E
+ُوٌ	4,R
+ُوِ	4,A
+ُوٍ	4,S
+وٰ	4,h\
+ِيَ	6dQ
+ِيً	6dW
+ِيُ	6dE
+ِيٌ	6dR
+ِيِ	6dA
+ِيٍ	6dS
+يٰ	6dh\
+
+ُوَ	E,2
+ُوً	E,3
+ُوُ	E,4
+ُوٌ	E,5
+ُوِ	E,6
+ُوٍ	E,7
+ُوٰ	E,8
+ِيَ	Ad2
+ِيً	Ad3
+ِيُ	Ad4
+ِيٌ	Ad5
+ِيِ	Ad6
+ِيٍ	Ad7
+ِيٰ	Ad8
+
+ُوَ	4,2
+ُوً	4,3
+ُوُ	4,4
+ُوٌ	4,5
+ُوِ	4,6
+ُوٍ	4,7
+ُوٰ	4,8
+ِيَ	6d2
+ِيً	6d3
+ِيُ	6d4
+ِيٌ	6d5
+ِيِ	6d6
+ِيٍ	6d7
+ِيٰ	6d8
+
 # Long vowels
 َا	Qh
 َى	Qn
-ِي	Ad
 ُو	E,
+ِي	Ad
+
+َا	2h
+َى	2n
+ُو	4,
+ِي	6d
+
+# Variation
+ڤ	t\
+ٱ	y\
+ە	u\
+ھ	i\
+چ	[\
+ڈ	]\
+ے	s\
+ی	d\
+پ	f\
+ٰ	h\
+ٹ	j\
+ں	k\
+گ	;\
+ک	'\
+ڑ	v\
+ژ	.\
+ٕ	Y\
+ٔ	H\
+ٓ	N\
 
 # Basic
 ذ	`
+ّ	1
+َ	2
+ً	3
+ُ	4
+ٌ	5
+ِ	6
+ٍ	7
+ٰ	8
+ْ	9
 ض	q
 ص	w
 ث	e
@@ -102,7 +246,7 @@ sort: original
 ء	x
 ؤ	c
 ر	v
-ٰ	b
+لا	b
 ى	n
 ة	m
 و	,
@@ -117,7 +261,7 @@ sort: original
 ً	W
 ُ	E
 ٌ	R
-ٕ	T
+لإ	T
 إ	Y
 ‘	U
 ÷	I
@@ -129,7 +273,7 @@ sort: original
 ٍ	S
 ]	D
 [	F
-ٔ	G
+لأ	G
 أ	H
 ـ	J
 ،	K
@@ -138,7 +282,7 @@ sort: original
 ْ	X
 }	C
 {	V
-ٓ	B
+لآ	B
 آ	N
 ’	M
 ,	<

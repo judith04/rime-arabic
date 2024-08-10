@@ -6,7 +6,7 @@
 
 ---
 name: arabic_mac
-version: '0.1'
+version: '0.2'
 sort: original
 ...
 
@@ -19,6 +19,8 @@ sort: original
 ئ	d~G
 ئ	~d~G
 ئ	~D~G
+
+ٰٓ	0~g
 
 # Assimilation: al-C -> aC-C
 لضّ	gqI
@@ -35,6 +37,21 @@ sort: original
 لدّ	gvI
 لزّ	gbI
 لرّ	gnI
+
+لضّ	gq9
+لصّ	gw9
+لثّ	ge9
+لشّ	ga9
+لسّ	gs9
+للّ	gg9
+لتّ	gj9
+لنّ	gk9
+لظّ	gz9
+لطّ	gx9
+لذّ	gc9
+لدّ	gv9
+لزّ	gb9
+لرّ	gn9
 
 # Gemination
 ضّ	qI
@@ -70,24 +87,122 @@ sort: original
 إّ	NI
 ؤّ	MI
 
+ضّ	q9
+صّ	w9
+ثّ	e9
+قّ	r9
+فّ	t9
+غّ	y9
+عّ	u9
+هّ	i9
+خّ	o9
+حّ	p9
+جّ	[9
+شّ	a9
+سّ	s9
+يّ	d9
+بّ	f9
+لّ	g9
+تّ	j9
+نّ	k9
+مّ	l9
+كّ	;9
+ظّ	z9
+طّ	x9
+ذّ	c9
+دّ	v9
+زّ	b9
+رّ	n9
+وّ	m9
+ئّ	C9
+ءّ	V9
+أّ	B9
+إّ	N9
+ؤّ	M9
+
+# Long vowels patch
+ِيَ	EdQ
+ِيً	EdW
+ِيِ	EdE
+ِيٍ	EdR
+ِيُ	EdT
+ِيٌ	EdY
+ِيٰ	Ed~h
+ُوَ	TmQ
+ُوً	TmW
+ُوِ	TmE
+ُوٍ	TmR
+ُوُ	TmT
+ُوٌ	TmY
+ُوٰ	Tm~h
+
+ِيَ	4dQ
+ِيً	4dW
+ِيِ	4dE
+ِيٍ	4dR
+ِيُ	4dT
+ِيٌ	4dY
+ِيٰ	4d~h
+ُوَ	6mQ
+ُوً	6mW
+ُوِ	6mE
+ُوٍ	6mR
+ُوُ	6mT
+ُوٌ	6mY
+ُوٰ	6m~h
+
+ِيَ	Ed2
+ِيً	Ed3
+ِيِ	Ed4
+ِيٍ	Ed5
+ِيُ	Ed6
+ِيٌ	Ed7
+ِيٰ	Ed0
+ُوَ	Tm2
+ُوً	Tm3
+ُوِ	Tm4
+ُوٍ	Tm5
+ُوُ	Tm6
+ُوٌ	Tm7
+ُوٰ	Tm0
+
+ِيَ	4d2
+ِيً	4d3
+ِيِ	4d4
+ِيٍ	4d5
+ِيُ	4d6
+ِيٌ	4d7
+ِيٰ	4d0
+ُوَ	6m2
+ُوً	6m3
+ُوِ	6m4
+ُوٍ	6m5
+ُوُ	6m6
+ُوٌ	6m7
+ُوٰ	6m0
+
 # Long vowels
 َا	Qh
 َى	QD
 ِي	Ed
 ُو	Tm
 
+َا	2h
+َى	2D
+ِي	4d
+ُو	6m
+
 # Basic
 ـ	`
-١	1
-٢	2
-٣	3
-٤	4
-٥	5
-٦	6
-٧	7
-٨	8
-٩	9
-٠	0
+َ	2
+ً	3
+ِ	4
+ٍ	5
+ُ	6
+ٌ	7
+ْ	8
+ّ	9
+ٰ	0
 ض	q
 ص	w
 ث	e
@@ -154,7 +269,6 @@ sort: original
 ؟	?
 
 # AltGr
-ظ	~1
 ط	~2
 ذ	~3
 د	~4
