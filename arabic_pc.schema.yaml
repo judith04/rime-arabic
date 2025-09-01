@@ -6,7 +6,7 @@ schema:
   name: 阿拉伯文转写_PC
   version: '0.2.0'
   author: 
-    - Mishiro Shinohara <mishiro@sisu1949.onmicrosoft.com>
+    - Mishiro Shinohara <msr.sh@hotmail.com>
   description: |
     基于 IBM PC 的阿拉伯文键位，有改动
 
